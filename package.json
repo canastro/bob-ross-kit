@@ -1,0 +1,29 @@
+{
+  "name": "bob-ross-kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -c .storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^4.1.4",
+    "@storybook/addon-knobs": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
+    "@storybook/react": "^4.1.4",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
+    "@types/styled-components": "^4.1.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-styled-components": "^1.10.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "storybook-addon-jsx": "^6.0.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.3"
+  }
+}
