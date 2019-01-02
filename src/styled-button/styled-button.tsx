@@ -2,12 +2,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export interface Props {
-  /** this dictates what the button will say  */
+  /** Button content  */
   children: React.ReactNode;
-  /** this dictates what the button will do  */
+  /** Callback to handle the click event  */
   onClick: () => void;
   /**
-   * Disables onclick
+   * Disables onClick
    *
    * @default false
    **/
@@ -22,7 +22,8 @@ const RootStyledButton = styled.button`
   border-radius: 2px;
   border: 2px solid #3d5567;
   display: inline-flex;
-  background-color: ${props => (props.disabled ? props.theme.secondary : props.theme.primary)};
+  background-color: ${props =>
+    props.disabled ? props.theme.palette.secondary : props.theme.palette.primary};
 `;
 
 const ButtonSpan = styled.span`
@@ -34,7 +35,7 @@ const ButtonSpan = styled.span`
   text-transform: uppercase;
 `;
 
-export const StyledButton = (props: Props) => {
+const StyledButton = (props: Props) => {
   const { children, onClick, disabled = false } = props;
 
   return (
@@ -43,3 +44,5 @@ export const StyledButton = (props: Props) => {
     </RootStyledButton>
   );
 };
+
+export default StyledButton;
