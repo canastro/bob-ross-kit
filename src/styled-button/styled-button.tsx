@@ -17,10 +17,11 @@ export interface Props {
 const noop = () => {};
 
 const RootStyledButton = styled.button`
-  padding: 0px 20px;
+  cursor: pointer;
+  padding: 0px ${props => props.theme.spacing.unit * 2};
   height: 49px;
   border-radius: 2px;
-  border: 2px solid #3d5567;
+  border: 2px solid ${props => props.theme.palette.white};
   display: inline-flex;
   background-color: ${props =>
     props.disabled ? props.theme.palette.secondary : props.theme.palette.primary};
@@ -28,10 +29,10 @@ const RootStyledButton = styled.button`
 
 const ButtonSpan = styled.span`
   margin: auto;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: ${props => props.theme.typography.fontSizeButton};
+  font-weight: ${props => props.theme.typography.fontWeightBold};
   text-align: center;
-  color: #fff;
+  color: ${props => props.theme.palette.white};
   text-transform: uppercase;
 `;
 
