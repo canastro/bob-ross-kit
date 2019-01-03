@@ -1,16 +1,23 @@
-import createPalette from './create-palette';
-import createTypography from './create-typography';
-import zIndex from './z-index';
-import spacing from './spacing';
+import createPalette, { Palette } from './create-palette';
+import createTypography, { Typography } from './create-typography';
+import zIndex, { ZIndex } from './z-index';
+import spacing, { Spacing } from './spacing';
 
-const createTheme = (options: any = {}): any => {
+export type Theme = {
+  palette: Palette,
+  typography: Typography,
+  spacing: Spacing,
+  zIndex: ZIndex
+};
+
+const createTheme = (options: any = {}): Theme => {
   const {
     palette: paletteInput = {},
     typography: typographyInput = {}
   } = options;
 
   const palette = createPalette(paletteInput)
-  const typography = createTypography(palette, typographyInput);
+  const typography = createTypography(typographyInput);
 
   return {
     palette,

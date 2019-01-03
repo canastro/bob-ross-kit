@@ -7,7 +7,6 @@ import StyledButton from './styled-button';
 import createTheme from '../theme';
 
 storiesOf('StyledButton', module)
-  .addDecorator(renderStory => <ThemeProvider theme={createTheme()}>{renderStory()}</ThemeProvider>)
   .add('basic', () => (
     <StyledButton disabled={boolean('disabled', false)} onClick={() => {}}>
       {text('text', 'Hello World')}

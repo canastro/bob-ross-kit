@@ -1,4 +1,12 @@
-const createPalette = (palette: any): any => {
+export type Palette = {
+  white: string;
+  grey: string;
+  black: string;
+  primary: string;
+  secondary: string;
+};
+
+const createPalette = (palette: any): Palette => {
   const {
     white = '#fff',
     grey = '#f7f9fa',
