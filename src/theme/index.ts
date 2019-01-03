@@ -6,8 +6,7 @@ import spacing from './spacing';
 const createTheme = (options: any = {}): any => {
   const {
     palette: paletteInput = {},
-    typography: typographyInput = {},
-    ...other
+    typography: typographyInput = {}
   } = options;
 
   const palette = createPalette(paletteInput)

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export interface Props {
+interface Props {
   /** Button content  */
   children: React.ReactNode;
   /** Callback to handle the click event  */
@@ -36,7 +36,7 @@ const ButtonSpan = styled.span`
   text-transform: uppercase;
 `;
 
-const StyledButton = (props: Props) => {
+export const StyledButton: React.SFC<Props> = (props: Props): any => {
   const { children, onClick, disabled = false } = props;
 
   return (
