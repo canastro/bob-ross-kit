@@ -6,7 +6,11 @@ export type Palette = {
   secondary: string;
 };
 
-const createPalette = (palette: any): Palette => {
+export type PaletteInput = {
+  [K in keyof Palette]+?: Palette[K];
+}
+
+const createPalette = (palette: PaletteInput): Palette => {
   const {
     white = '#fff',
     grey = '#f7f9fa',

@@ -1,4 +1,4 @@
-export type Typography = {
+export interface Typography {
     fontFamily: string;
     fontSizeH1: string;
     fontSizeH2: string;
@@ -10,11 +10,17 @@ export type Typography = {
     fontWeightNormal: number;
     fontWeightLight: number;
     fontWeightBold: number;
-};
+    fontSize?: number;
+    htmlFontSize?: number;
+}
+
+export type TypographyInput = {
+    [K in keyof Typography]+?: Typography[K];
+}
 
 const defaultFontFamily = "'PX Grotesk', sansSerif";
 
-const createTypography = (typography: any): Typography => {
+const createTypography = (typography: TypographyInput): Typography => {
     const {
         fontFamily = defaultFontFamily,
 

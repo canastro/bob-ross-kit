@@ -1,5 +1,5 @@
-import createPalette, { Palette } from './create-palette';
-import createTypography, { Typography } from './create-typography';
+import createPalette, { Palette, PaletteInput } from './create-palette';
+import createTypography, { Typography, TypographyInput } from './create-typography';
 import zIndex, { ZIndex } from './z-index';
 import spacing, { Spacing } from './spacing';
 
@@ -10,11 +10,16 @@ export type Theme = {
   zIndex: ZIndex
 };
 
-const createTheme = (options: any = {}): Theme => {
+export type ThemeInput = {
+  palette?: PaletteInput,
+  typography?: TypographyInput
+}
+
+const createTheme = (options: ThemeInput): Theme => {
   const {
     palette: paletteInput = {},
     typography: typographyInput = {}
-  } = options;
+  } = options || {};
 
   const palette = createPalette(paletteInput)
   const typography = createTypography(typographyInput);
