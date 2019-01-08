@@ -7,7 +7,7 @@ export type Palette = {
 };
 
 export type PaletteInput = {
-  [K in keyof Palette]+?: Palette[K];
+  +readonly [K in keyof Palette]+?: Palette[K];
 }
 
 const createPalette = (palette: PaletteInput): Palette => {
@@ -19,15 +19,13 @@ const createPalette = (palette: PaletteInput): Palette => {
     secondary = '#dfdded'
   } = palette;
 
-  const output = {
+  return {
     white,
     grey,
     black,
     primary,
     secondary
   };
-
-  return output;
 };
 
 export default createPalette;
