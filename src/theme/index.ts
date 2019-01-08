@@ -3,14 +3,14 @@ import createTypography, { Typography, TypographyInput } from './create-typograp
 import zIndex, { ZIndex } from './z-index';
 import spacing, { Spacing } from './spacing';
 
-export type Theme = {
+export interface Theme {
   palette: Palette,
   typography: Typography,
   spacing: Spacing,
   zIndex: ZIndex
 };
 
-export type ThemeInput = {
+export interface ThemeInput {
   palette?: PaletteInput,
   typography?: TypographyInput
 }

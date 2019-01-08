@@ -1,4 +1,4 @@
-export type Palette = {
+export interface Palette {
   white: string;
   grey: string;
   black: string;

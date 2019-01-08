@@ -1,4 +1,4 @@
-export type Typography = {
+export interface Typography {
   fontFamily: string;
   fontSizeH1: string;
   fontSizeH2: string;
